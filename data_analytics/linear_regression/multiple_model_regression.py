@@ -6,7 +6,7 @@ from sklearn.linear_model import LinearRegression
 flights = pd.read_csv('arrival_delay_data.csv').dropna()
 
 # Define X and y and convert to proper format
-X = flights[['dep_delay', 'dep_time']].values.reshape(-1, 2)
+X = flights[['distance', 'air_time']].values.reshape(-1, 2)
 y = flights[['arr_delay']].values.reshape(-1, 1)
 
 # Initialize a linear regression model
@@ -16,7 +16,7 @@ multipleModel = LinearRegression()
 multipleModel = multipleModel.fit(X, y)
 
 # Predict the arrival delay and save the slope coefficient
-yHat = multipleModel.predict([[56, 1107]])
+yHat = multipleModel.predict([[1841, 32]])
 slope = multipleModel.coef_
 
 print('Predicted arrival delay:', yHat)
