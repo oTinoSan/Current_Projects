@@ -2,7 +2,20 @@
 
 dpkg -l | grep libnvinfer
 
-**check ro tensorRT libraries in library path**
+result:
+ii  libnvinfer-bin                                   8.2.1-1+cuda10.2                              arm64        TensorRT binaries
+ii  libnvinfer-dev                                   8.2.1-1+cuda10.2                              arm64        TensorRT development libraries and headers
+ii  libnvinfer-doc                                   8.2.1-1+cuda10.2                              all          TensorRT documentation
+ii  libnvinfer-plugin-dev                            8.2.1-1+cuda10.2                              arm64        TensorRT plugin libraries
+ii  libnvinfer-plugin8                               8.2.1-1+cuda10.2                              arm64        TensorRT plugin libraries
+ii  libnvinfer-samples                               8.2.1-1+cuda10.2                              all          TensorRT samples
+ii  libnvinfer8                                      8.2.1-1+cuda10.2                              arm64        TensorRT runtime libraries
+
+TensorRT version: 8.2.1
+TensorRT package revision number: -1
+Cuda version compatability: +cuda10.2
+
+**check tensorRT libraries in library path**
 
 ldconfig -p | grep libnvinfer
 
@@ -15,6 +28,8 @@ cat /usr/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 
 pip3 show torch
 
+
+'''
 **include specific directory for TensorRT libraries in LD_LIBRARY_PATH**
 
 *modifying environment variables*
@@ -34,4 +49,4 @@ source bash or restart shell
 
 check:
 echo $LD_LIBRARY_PATH
-
+'''
