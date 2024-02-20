@@ -1,0 +1,17 @@
+All done on Desktop workstation_1 with IP 192.168.0.19 and Turtlebot
+Jetson Nano nano40 with IP 192.168.0.40.
+
+NVIDIA SDK Manager Tutorial: Installing Jetson Software Explained
+https://www.youtube.com/watch?v=Ucg5Zqm9ZMk
+
+A Guide to using TensorRT on the Nvidia Jetson Nano
+https://docs.donkeycar.com/guide/robot_sbc/tensorrt_jetson_nano/
+
+NVIDIA Deep Learning TensorRT Documentation
+https://docs.nvidia.com/deeplearning/tensorrt/install-guide/index.html#downloading
+
+Install Jetson Software with SDK Manager
+https://docs.nvidia.com/sdk-manager/install-with-sdkm-jetson/index.html
+
+SDK Manager Install
+https://developer.nvidia.com/sdk-manager
