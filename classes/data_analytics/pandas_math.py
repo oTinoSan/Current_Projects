@@ -177,3 +177,4 @@ print(scores.describe())
 
 # Prints the summary for Exam1 only
 print(scores[['Exam1']].describe())
+

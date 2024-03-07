@@ -4,26 +4,26 @@ Chapter 2 Ungraded Activity:
 Extend the Progression class we have discussed at the end of Chapter to create a Colatz progression. The progression starts with a starting value, which is passed into the constructor of the progression. The next number depends on the previous value: if the previous value is an even number, the next number is half of it; if the previous number is an odd number, the next number is three times this number plus one. The progression ends when it reach the value of 1. For example, the Colatz progression starting with 7 is: 7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1.
 """
 
-class ColatzProgression (Progression):
-    """Iterator producing a generalized Fibonacci progression."""
+# class ColatzProgression (Progression):
+#     """Iterator producing a generalized Fibonacci progression."""
 
-    def __init__ (self, first=100):
-        """Create a new fibonacci progression.
-           first: the first term of the progression (default 100)
-        """
-        super().__init__ (first) # start progression at first
+#     def __init__ (self, first=100):
+#         """Create a new fibonacci progression.
+#            first: the first term of the progression (default 100)
+#         """
+#         super().__init__ (first) # start progression at first
 
-    def advance (self):
-        """Update current value."""
-        if self._current == 1:
-            # reach the end of the progression, stop.
-            self._current = None
-        elif self._current % 2 == 0:
-            # it is an even number
-            self._current = self._current / 2
-        else:
-            # if is an odd number
-            self._current = self._current * 3 + 1
+#     def advance (self):
+#         """Update current value."""
+#         if self._current == 1:
+#             # reach the end of the progression, stop.
+#             self._current = None
+#         elif self._current % 2 == 0:
+#             # it is an even number
+#             self._current = self._current / 2
+#         else:
+#             # if is an odd number
+#             self._current = self._current * 3 + 1
 
 # Chapter 3 Ungraded Activity is saved as a .png file
 
@@ -37,7 +37,7 @@ recursive algorithm to find two integers in S that sum to k, if such a pair exis
 
 Solution:
 
-Our goal is to find integers a, b ∈ S such that a + b = k. Without lost of generality, we can also assume that a ≤ b. One straight forward way to implement this is to consider every pairs of values in S, and check if they sum up to k. But that will give a O(n2) algorithm.
+Our goal is to find integers a, b ∈ S such that a + b = k. Without lost of generality, we can also assume that a ≤ b. One straight forward way to implement this is to consider every pair of values in S, and check if they sum up to k. But that will give a O(n2) algorithm.
 
 We can do better by utilizing the property that the values in S are sorted and in ascending order. We add the first number and the last number of the list. If they sum up to k, then we find the answer and can return the result. However, if the sum is less than k, that means the first number is in no way  be able to contribute to the answer, so we can discard it and repeat. Similarly, if the sum is larger than k, then the last number is in no way be able to contribute to the answer, so we can discard it and repeat. The following is the Python implementation:
 """
@@ -69,16 +69,20 @@ def sum_to_k_v2 (S, k, start = 0, end = None):
     # else if must be the case that S [start] + S [end] > k
     return sum_to_k_v2 (S, k, start, end - 1)
 
+sum2 = sum_to_k_v2 ([1,4,5,7,11,13,14,15,18,22], 22)
+print(sum2)
+
 # It should be easy to see that this version is O(n).
 
 """
+Chapter 5:
+
 As mentioned in the class, Python has a pretty efficient implementation of append operation. The same cannot be said about the prepend operation (insert at index 0). In this exercise, you are asked to derive an experiment to show that prepend is much less efficient then append.
 
 Solution:
 
 We will do the following, creating a list of size 1,000, 10,000, 100,000, and 1,000,000 by both the operations of append and prepend while taking timing information. Here is the code:
 """
-
 
 from time import time
 
